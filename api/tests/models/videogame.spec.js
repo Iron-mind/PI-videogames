@@ -14,8 +14,16 @@ describe('Videogame model', () => {
           .then(() => done(new Error('It requires a valid name')))
           .catch(() => done());
       });
-      it('should work when its a valid name', () => {
-        Recipe.create({ name: 'Super Mario Bros' });
+      it('should work when its a valid data', () => {
+        Videogame.create({ name: 'EA sports FiFA 12' ,
+         platforms:[
+           "Xbox 360",
+           "Play Station 3"
+         ],
+         description: 'Funny game'
+       })
+        .then(() => done())
+        .catch(() =>done(new Error('It requires a valid data (name, platforms and description required )')) );
       });
     });
   });
