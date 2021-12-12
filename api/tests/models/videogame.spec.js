@@ -1,4 +1,4 @@
-const { Videogame, Platform, conn } = require('../../src/db.js');
+const { Videogame, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Videogame and Platform model', () => {
@@ -25,15 +25,7 @@ describe('Videogame and Platform model', () => {
       });
        
 
-      it('should create a new platform', () => {
-        
-
-        Platform.create({ 
-          name:'xbox 360' 
-       })
-        .then(() => done())
-        .catch(() =>done(new Error('It requires a valid data ')) );
-      });
+      
 
 
     });
