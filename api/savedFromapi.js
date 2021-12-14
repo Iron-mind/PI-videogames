@@ -19,13 +19,6 @@ async function guardarEnBase(gameList) {
     //console.log('game///',game.name, game.genres[0].name);
     return gameInDataBase;
 
-    // return  Genre.findOrCreate({
-    //     where: {
-    //         name:  'Action'
-    //     }
-    // }).then(genreInDatabase=>gameInDataBase.addGenre(genreInDatabase))
-
-    // return gameInDataBase.addGenre(genreInDatabase)
   }
 
   let promises = gameList.map(saveGame);
@@ -105,8 +98,8 @@ async function saveGenres(gameName, genres) {
     let promeses = genres.map((genre) => {
       return saveGenre(gameName, genre.name);
     });
-
-    return promeses
+     result = await Promise.all(promeses)
+    return result
   } catch (e) {
     console.log(e);
   }
@@ -120,4 +113,4 @@ setTimeout(function () {
   });
   //saveGenre('brutal legend', 'Action')
   console.log(videoGames.length);
-}, 10000);
+}, 15000);
