@@ -1,0 +1,44 @@
+.landingImg {
+    width: 100%;
+    height: 100%;
+    background-image: url('./bggames.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top:  0rem;
+    position: relative;
+    border-radius: 5px;
+
+
+}
+.landing{
+  background-color: #53e2e9;
+  height: 100vh;
+}
+.btn_home{
+    position: relative;
+    top: 5%;
+    left: 40%; 
+
+    background-color: #53e2e9;
+    font-size: 30px;
+    padding: 6px 16px;
+    min-width: 64px;
+    box-sizing: border-box;
+
+    font-weight: 500;
+    line-height: 1.75;
+    border-radius: 10px;
+
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0rem;
+    border: 0rem;
+    margin-bottom: 0rem;
+    font-weight: bold;
+}
