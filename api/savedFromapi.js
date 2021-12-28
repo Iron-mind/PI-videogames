@@ -1,5 +1,5 @@
 const fetch = require("cross-fetch"); //uso cross-fetch que me permite usar el fetch
-const { Videogame, Genre, API_KEY, conn } = require("./src/db");
+const { Videogame, Genre,Platform, API_KEY, conn } = require("./src/db");
 const { Op } = require("sequelize");
 var videoGames = [];
 var genres = new Set();
@@ -13,6 +13,7 @@ async function guardarEnBase(gameList) {
         description: game.description,
         released: game.released,
         background_image: game.background_image,
+        status: 'existing'
       },
     });
 
@@ -84,7 +85,11 @@ async function saveGenre(gameName, genreName) {
     });
 
     const [genreInDB, created] = await Genre.findOrCreate({
-      where: { name: genreName },
+      where: {
+        name:{
+          [Op.iLike]: `%${genreName}%`,
+        }
+      }
     });
 
     return g.addGenre(genreInDB);
@@ -114,3 +119,51 @@ setTimeout(function () {
   //saveGenre('brutal legend', 'Action')
   console.log(videoGames.length);
 }, 15000);
+
+
+///SAVE PLATFORMS
+
+async function savePlatform(gameName, platformName) {
+  try {
+    let g = await Videogame.findOne({
+      where: {
+        name: {
+          [Op.iLike]: `%${gameName}%`,
+        },
+      },
+    });
+
+    const [platformInDB, created] = await Platform.findOrCreate({
+      where: {
+        name: platformName
+        // {
+        //   [Op.iLike]: `%${platformName}%`,
+        // }
+      }
+    });
+
+    return g.addPlatform(platformInDB);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function savePlatforms(gameName, platforms) {
+  try {
+    let promeses = platforms.map((platform) => {
+      return savePlatform(gameName, platform.platform.name);
+    });
+     result = await Promise.all(promeses)
+    return result
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+setTimeout(function () {
+  videoGames.map((g) => {
+    return savePlatforms(g.name, g.platforms);
+  });
+  //saveGenre('brutal legend', 'Action')
+  console.log(videoGames.length);
+}, 20000);
