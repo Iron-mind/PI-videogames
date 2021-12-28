@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { Videogame, Genre, API_KEY } = require("../db.js");
+const { Videogame, Genre,Platform, API_KEY } = require("../db.js");
 const { Op } = require("sequelize");
 const fetch = require("cross-fetch");
 //const episodesRouter = require("./episodes")
@@ -19,12 +19,12 @@ router.get("/", async (req, res, next) => {
             [Op.iLike]: `%${name}%`,
           },
         },
-        include: Genre,
+        include: [Genre,Platform]
       });
       res.status(200).json([...gamesFounded, ...gamesInapi.results]);
     } else {
       let games = await Videogame.findAll({
-        include: Genre,
+        include: [Genre,Platform]
       });
       res.status(200).json(games);
     }
@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => {
     var apiGame = await fetch(linkApi + "/" + id + "?key=" + API_KEY).then(
       (data) => data.json()
     );
-    let game = await Videogame.findOne({ where: { id: id }, include: Genre });
+    let game = await Videogame.findOne({ where: { id: id }, include: [Genre,Platform] });
     game.platforms = apiGame.platforms;
     res.json(game);
   } else {
