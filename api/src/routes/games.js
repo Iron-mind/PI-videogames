@@ -8,11 +8,31 @@ let router = Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    let { name } = req.query;
+    let { name, order } = req.query;
+
     if (name) {
       let gamesInapi = await fetch(
         linkApi + "?search=" + name + "&key=" + API_KEY
       ).then((data) => data.json());
+
+       if(order){
+         let gamesFounded = await Videogame.findAll({
+           order: order=="alph"?[
+            ['name', 'ASC'],
+            ]:[
+            ['rating', 'ASC'],
+            ],
+           where: {
+             name: {
+               [Op.iLike]: `%${name}%`,
+             }
+           },
+           include: [Genre,Platform]
+         });
+          return res.json([...gamesFounded,...gamesInapi.results])
+      }
+      res.json(Object.keys(req.body).length)
+
       let gamesFounded = await Videogame.findAll({
         where: {
           name: {
@@ -22,7 +42,9 @@ router.get("/", async (req, res, next) => {
         include: [Genre,Platform]
       });
       res.status(200).json([...gamesFounded, ...gamesInapi.results]);
-    } else {
+
+
+    }  else {
       let games = await Videogame.findAll({
         include: [Genre,Platform]
       });
@@ -53,19 +75,33 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async function (req, res) {
   try {
-    let savingGame = req.body;
-    let gameInDB = await Videogame.create(savingGame);
+    let gameToSave = req.body;
+    let gameInDB = await Videogame.create(gameToSave);
 
-    let promises = savingGame.genres.map((g) => {
+    let promises = gameToSave.genres.map((g) => {
       return Genre.findOne({
         where: { name: g },
       });
     });
+
+    let promises2 = gameToSave.platforms.map((p) => {
+      return Genre.findOne({
+        where: { name: p },
+      });
+    });
+
+
+
     const genresSaved = await Promise.all(promises);
+    const platformsSaved = await Promise.all(promises2);
+
     await gameInDB.addGenres(genresSaved);
+    await gameInDB.addPlatforms(platformsSaved);
+
     res.json(gameInDB);
   } catch (error) {
     console.log(error);
+    res.status(400).send('error saving')
   }
 });
 module.exports = router;
