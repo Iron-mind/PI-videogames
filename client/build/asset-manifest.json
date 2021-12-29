@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54da494a.chunk.css",
+    "main.js": "/static/js/main.a9d6f6e5.chunk.js",
+    "main.js.map": "/static/js/main.a9d6f6e5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d3ed8301.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d3ed8301.js.map",
+    "static/js/2.95aafca0.chunk.js": "/static/js/2.95aafca0.chunk.js",
+    "static/js/2.95aafca0.chunk.js.map": "/static/js/2.95aafca0.chunk.js.map",
+    "static/js/3.02f51eb3.chunk.js": "/static/js/3.02f51eb3.chunk.js",
+    "static/js/3.02f51eb3.chunk.js.map": "/static/js/3.02f51eb3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.54da494a.chunk.css.map": "/static/css/main.54da494a.chunk.css.map",
+    "static/js/2.95aafca0.chunk.js.LICENSE.txt": "/static/js/2.95aafca0.chunk.js.LICENSE.txt",
+    "static/media/Landing.module.css": "/static/media/bggames.69a7d2f1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d3ed8301.js",
+    "static/js/2.95aafca0.chunk.js",
+    "static/css/main.54da494a.chunk.css",
+    "static/js/main.a9d6f6e5.chunk.js"
+  ]
+}
