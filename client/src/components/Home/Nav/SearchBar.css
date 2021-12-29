@@ -1,0 +1,30 @@
+.searc {
+
+    font-size: 1.2rem;
+    width: 100%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    border: none;
+    background-color: #ebeceeef;
+    border-radius:0.2rem ;
+
+}
+
+.input-wrapper{
+    border-radius: 0.5rem;
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+
+    display: inline-flex;
+    justify-content: space-between;
+    width: 320px;
+    background-color: #697f9cef;
+    box-shadow: 0.1rem 0.1rem 0.1rem #e9eef3ef;
+
+
+}
+.btn{
+    color: white;
+    font-size: 1.2rem;
+    background-color: #737a83ef;
+    border-radius: 0.5rem;
+}

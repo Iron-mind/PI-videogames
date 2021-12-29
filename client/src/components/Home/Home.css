@@ -1,0 +1,21 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+aside {
+
+    flex:40px;
+    background-color: grey;
+    padding: 20px;
+
+}
+
+section {
+    flex:70%;
+    background-color: rgb(91, 109, 148);
+    padding: 20px;
+    flex-wrap: wrap;
+}
+select {
+  max-width: 100px;
+}
