@@ -8,7 +8,7 @@ let router = Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    let { name, order } = req.query;
+    let { name, order ,orderby} = req.query;
 
     if (name) {
       let gamesInapi = await fetch(
@@ -18,9 +18,9 @@ router.get("/", async (req, res, next) => {
        if(order){
          let gamesFounded = await Videogame.findAll({
            order: order=="alph"?[
-            ['name', 'ASC'],
+            ['name', orderby],
             ]:[
-            ['rating', 'ASC'],
+            ['rating', orderby],
             ],
            where: {
              name: {
@@ -31,7 +31,7 @@ router.get("/", async (req, res, next) => {
          });
           return res.json([...gamesFounded,...gamesInapi.results])
       }
-      res.json(Object.keys(req.body).length)
+
 
       let gamesFounded = await Videogame.findAll({
         where: {
@@ -45,10 +45,22 @@ router.get("/", async (req, res, next) => {
 
 
     }  else {
-      let games = await Videogame.findAll({
+      if (!order) {
+        let games = await Videogame.findAll({
+          include: [Genre,Platform]
+        });
+        return res.status(200).json(games);
+      }
+
+
+      let games2 = await Videogame.findAll({
+        order: order=="alph"?[
+         ["name","DESC"]
+         ]:[["rating","ASC"]],
+
         include: [Genre,Platform]
       });
-      res.status(200).json(games);
+       res.status(200).json([...games2]);
     }
   } catch (err) {
     console.error(err);

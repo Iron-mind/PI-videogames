@@ -5,6 +5,7 @@ const fetch = require("cross-fetch"); //uso cross-fetch que me permite usar el f
 // Ejemplo: const authRouter = require('./auth.js');
 const gamesRouter = require("./games")
 const genresRouter = require("./genres")
+const platformsRouter = require("./platforms")
 
 // TODO: finish another routers
 
@@ -14,5 +15,6 @@ const router = Router();
 router.use('/videogames', gamesRouter)
 router.use('/videogame', gamesRouter)
 router.use('/genres', genresRouter)
+router.use('/platforms', platformsRouter)
 
 module.exports = router;
