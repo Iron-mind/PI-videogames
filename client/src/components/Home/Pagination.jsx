@@ -12,13 +12,20 @@ export default function Pagination() {
      const dispatch = useDispatch()
 
      useEffect(() => {
-     dispatch(someFetchActionCreator());
+       //{order:"rating",orderBy:"desc"}
+     dispatch(someFetchActionCreator({}));
 
    }, [])
  }
  useFetching(getGames)
+
 useEffect(()=>{
-  setcurrentItems(games.slice(0,9))
+if (games.length>99) {
+     setcurrentItems(games.slice(0,15))
+  //
+   }
+
+
 },[games])
 
 

@@ -1,25 +1,32 @@
 import React, {useState} from "react";
+import {useDispatch}  from 'react-redux'
+import {getGames}  from ''
 
 //filtering options
 export default function Options() {
  const [filteringInput , setfilteringInput]= useState({
-   alph:"desc",
+   alph:"none",
    rating:"none",
    genre:"none",
    type:"none"
  })
+ const dispatch = useDispatch()
 
   function handlerInput(e) {
     setfilteringInput({
       ...filteringInput,
       [e.target.name]:e.target.value
     })
+
+
   }
 
   return (<div className="left-bar">
      <section>
        <label htmlFor='alph'>Alphabetical order</label>
        <select onChange={handlerInput} value={filteringInput.aplh}name='alph'>
+         <option  default value='none' >Select</option>
+
          <option  value='desc' >A to Z</option>
          <option  value='asc' >Z to A</option>
        </select>

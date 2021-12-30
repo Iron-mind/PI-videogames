@@ -1,9 +1,11 @@
 import React, {useState,  useEffect } from "react";
+import {useSelector}  from 'react-redux'
 
 import Card from "./Card.jsx";
 
 export default function Cards({items}) {
 
+  const games = useSelector((state) => state.games);
 
 
 
