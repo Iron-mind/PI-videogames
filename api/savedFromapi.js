@@ -78,17 +78,16 @@ async function saveGenre(gameName, genreName) {
   try {
     let g = await Videogame.findOne({
       where: {
-        name: {
-          [Op.iLike]: `%${gameName}%`,
-        },
+        name: gameName,
       },
     });
 
     const [genreInDB, created] = await Genre.findOrCreate({
       where: {
-        name:{
-          [Op.iLike]: `%${genreName}%`,
-        }
+        name:genreName
+        // {
+        //   [Op.iLike]: `%${genreName}%`,
+        // }
       }
     });
 
@@ -127,9 +126,7 @@ async function savePlatform(gameName, platformName) {
   try {
     let g = await Videogame.findOne({
       where: {
-        name: {
-          [Op.iLike]: `%${gameName}%`,
-        },
+        name: gameName,
       },
     });
 

@@ -5,6 +5,21 @@ const fetch = require("cross-fetch");
 //const episodesRouter = require("./episodes")
 const linkApi = " https://api.rawg.io/api/games";
 let router = Router();
+let genreIncluded = {
+    model: Genre,
+    attributes: ['name'],
+     through: {
+       attributes: []
+     }
+  }
+let platformIncluded = {
+    model: Platform,
+    attributes: ['name'],
+     through: {
+       attributes: []
+     }
+  }
+
 
 router.get("/", async (req, res, next) => {
   try {
@@ -27,7 +42,7 @@ router.get("/", async (req, res, next) => {
                [Op.iLike]: `%${name}%`,
              }
            },
-           include: [Genre,Platform]
+           include: [genreIncluded,platformIncluded]
          });
           return res.json([...gamesFounded,...gamesInapi.results])
       }
@@ -39,7 +54,7 @@ router.get("/", async (req, res, next) => {
             [Op.iLike]: `%${name}%`,
           },
         },
-        include: [Genre,Platform]
+        include: [genreIncluded,platformIncluded]
       });
       res.status(200).json([...gamesFounded, ...gamesInapi.results]);
 
@@ -47,20 +62,24 @@ router.get("/", async (req, res, next) => {
     }  else {
       if (!order) {
         let games = await Videogame.findAll({
-          include: [Genre,Platform]
+          include: [genreIncluded,platformIncluded]
         });
         return res.status(200).json(games);
       }
 
 
       let games2 = await Videogame.findAll({
-        order: order=="alph"?[
-         ["name","DESC"]
-         ]:[["rating","ASC"]],
 
-        include: [Genre,Platform]
+        order: order=="alph"?[
+        ['name', orderby],
+        ]:[
+        ['rating', orderby],
+        ],
+         include: [genreIncluded,platformIncluded]
       });
-       res.status(200).json([...games2]);
+
+         return res.status(200).json([...games2])
+
     }
   } catch (err) {
     console.error(err);

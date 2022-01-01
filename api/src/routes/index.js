@@ -7,7 +7,6 @@ const gamesRouter = require("./games")
 const genresRouter = require("./genres")
 const platformsRouter = require("./platforms")
 
-// TODO: finish another routers
 
 const router = Router();
 // Configurar los routers
