@@ -1,0 +1,19 @@
+.pageNumbers {
+  list-style: none;
+
+}
+.pageNumbers li{
+  list-style: none;
+  display: inline;
+  padding: 0.5rem;
+  border: 0.08rem solid white;
+  cursor: pointer;
+}
+
+.pageNumbers li.active {
+  background-color: white;
+}
+.btnPages:hover{
+  background-color: white;
+  border: 0.1rem solid black;
+}

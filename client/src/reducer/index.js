@@ -1,11 +1,16 @@
-import {GET_GAMES}  from '../actions/index.js'
+import {SEARCH_GAME,
+   GET_GAMES,
+    FILTER_GAMES,
+     GET_GENRES,
+   SET_SEARCHINPUT }  from '../actions/index.js'
 
 
 const initialState = {
   games: [],
   searchInput:'',
-  temporaryGames:[]
-
+  temporaryGames:[],
+  gameDetail:{},
+  genres:[]
   };
 
 
@@ -13,25 +18,58 @@ const initialState = {
     switch (action.type) {
       case GET_GAMES:
 //       console.log();
-  console.log(action.payload);
+        console.log(action.payload);
         return   {
             ...state,
-
-            //temporaryGames: action.payload,
+            temporaryGames: action.payload,
             games: [...action.payload]
           }
-      case "GET_GAMES_IN_ORDER":
-      return   {
-          ...state,
+      case FILTER_GAMES:
+      console.log(action.payload.filter);
+        if (action.payload.filter === 'genre') {
+          return {
+            ...state,
+            games: state.temporaryGames.filter((g)=>{
+              return g.genres.reduce((p,c)=>{
+                return p||(c.name===action.payload.filterBy)
+              }, false)
+            })
+          }
 
-          //temporaryGames: action.payload,
-          games: [...action.payload],
-          temporaryGames:[...action.payload],
         }
+        return {
+          ...state,
+          games: state.temporaryGames.filter((g)=>{
+            return g.status=== action.payload.filterBy
+          })
+        }
+     case SEARCH_GAME:
+       return {
+         ...state,
+         games: action.payload.games,
+         searchInput:action.payload.input,
+         temporaryGames: action.payload.games,
+
+       }
+
+
+      case SET_SEARCHINPUT:
+        return {
+           ...state,
+           searchInput: action.payload
+        };
+      case GET_GENRES:
+        return {
+          ...state,
+          genres: [...action.payload]
+        }
+
+
 
       default:
         return state;
     }
+
 
   }
 
