@@ -93,14 +93,15 @@ router.get("/:id", async (req, res) => {
   const regex = /(\w+\-){4}\w+/g;
 
   if (regex.test(id)) {
+
+    let game = await Videogame.findOne({ where: { id: id }, include: [genreIncluded,platformIncluded] });
+
+    res.json(game);
+  } else {
     var apiGame = await fetch(linkApi + "/" + id + "?key=" + API_KEY).then(
       (data) => data.json()
     );
-    let game = await Videogame.findOne({ where: { id: id }, include: [Genre,Platform] });
-    game.platforms = apiGame.platforms;
-    res.json(game);
-  } else {
-    res.send(apiGame);
+    res.json(apiGame);
   }
 });
 
@@ -116,7 +117,7 @@ router.post("/", async function (req, res) {
     });
 
     let promises2 = gameToSave.platforms.map((p) => {
-      return Genre.findOne({
+      return Platform.findOne({
         where: { name: p },
       });
     });
