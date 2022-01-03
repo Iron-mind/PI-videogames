@@ -1,8 +1,13 @@
-import {SEARCH_GAME,
-   GET_GAMES,
-    FILTER_GAMES,
-     GET_GENRES,
-   SET_SEARCHINPUT }  from '../actions/index.js'
+import {
+  SEARCH_GAME,
+  GET_GAMES,
+  FILTER_GAMES,
+  GET_GENRES,
+  SET_SEARCHINPUT,
+  GET_GAME_DETAIL,
+  GET_PLATFORMS,
+  POST_GAME
+} from "../actions/index.js";
 
 
 const initialState = {
@@ -10,7 +15,9 @@ const initialState = {
   searchInput:'',
   temporaryGames:[],
   gameDetail:{},
-  genres:[]
+  genres:[],
+  platforms:[],
+  gameAdded:{}
   };
 
 
@@ -64,6 +71,25 @@ const initialState = {
           genres: [...action.payload]
         }
 
+     case GET_GAME_DETAIL:
+
+       return {
+         ...state,
+         gameDetail: action.payload
+       }
+
+      case GET_PLATFORMS:
+      return {
+        ...state,
+        platforms: action.payload
+       }
+      case POST_GAME:
+
+        return {
+          ...state,
+          gameAdded: action.payload
+
+        }
 
 
       default:
