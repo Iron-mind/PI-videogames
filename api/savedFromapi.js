@@ -10,7 +10,7 @@ async function guardarEnBase(gameList) {
       where: { name: game.name },
       defaults: {
         rating: game.rating,
-        description: game.description,
+        description: game.description_raw,
         released: game.released,
         background_image: game.background_image,
         status: 'existing'
@@ -116,7 +116,7 @@ setTimeout(function () {
     return saveGenres(g.name, g.genres);
   });
   //saveGenre('brutal legend', 'Action')
-  console.log(videoGames.length);
+  console.log('genres added');
 }, 15000);
 
 
@@ -162,5 +162,5 @@ setTimeout(function () {
     return savePlatforms(g.name, g.platforms);
   });
   //saveGenre('brutal legend', 'Action')
-  console.log(videoGames.length);
+  console.log('Platforms added');
 }, 20000);
