@@ -23,7 +23,7 @@ export default function GameDetail() {
 
   return (<div>
 
-  {game.id===id?(<div className={s.gameDetail} style={style}>
+  {game.id==id?(<div className={s.gameDetail} style={style}>
   <h1 className={s.title}>{game.name}</h1>
   <div className={s.content}>
     {game.description_raw ? game.description_raw : game.description}
@@ -56,12 +56,12 @@ export default function GameDetail() {
     </span>
   </div>
 
-  <Link to={"/addgame"} style={{ textDecoration: "none" }}>
-    <button className='btn'>Create New Game</button>
+  <Link to={"/home"} style={{ textDecoration: "none" }}>
+    <button className='btn'>Go to Home</button>
   </Link>
-</div>):<div>
+</div>):<h2>
   Loading...
-</div>}
+</h2>}
 </div>
 )
 }

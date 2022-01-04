@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector}  from 'react-redux'
 import {setSearchInput,searchGame,getGames, getGenres,filterGames}  from '../../actions/index'
+import {Link } from 'react-router-dom'
 
 //filtering options
 export default function Options() {
@@ -118,5 +119,8 @@ export default function Options() {
   </select>
 </section>
      <button type="button" onClick={resetInputs} className='btn'>Reset</button>
+    <hr/>   <Link to={"/addgame"} style={{ textDecoration: "none" }}>
+         <button className='btn'>Create New Game</button>
+       </Link>
   </div>)
 }

@@ -3,7 +3,6 @@ import Cards from "./Cards.jsx";
 import { connect}  from 'react-redux'
 import s from './Pagination.module.css'
 import {getGames}  from '../../actions/index.js'
-
 //logic Pagination
   function Pagination({games,getGames}) {
   const [currentItems , setcurrentItems]= useState([])
@@ -53,7 +52,10 @@ function btnNext() {
  useEffect(() => {
    async function fetchData() {
      // You can await here
-     await getGames();
+     if(games.length===0){
+       await getGames();
+     }
+
    }
    fetchData();
  }, [getGames])
