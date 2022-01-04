@@ -9,6 +9,8 @@ import {getGames}  from '../../actions/index.js'
   const [currentItems , setcurrentItems]= useState([])
   const [currentPage , setcurrentPage]= useState(1)
   const [itemsPerPage , setitemsPerPage]= useState(15)
+
+
   const [pageNumberLimit , setpageNumberLimit]= useState(2)
   const [maxPageNumberLimit , setmaxPageNumberLimit]= useState(2)
   const [minPageNumberLimit , setminPageNumberLimit]= useState(0)
@@ -138,7 +140,7 @@ let pagintationButtons = <ul className={s.pageNumbers}>
 </ul>
 
   return (<div className={s.cards}>
-      {pages.length>1?pagintationButtons:null}
+      {pages.length>0?pagintationButtons:null}
      <Cards items={currentItems}/>
   </div >)
 }
