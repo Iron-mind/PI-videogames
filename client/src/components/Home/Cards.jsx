@@ -22,7 +22,14 @@ export default function Cards({items}) {
       {
         items.length > 0 ? (
         items.map((c) => {
-          return <Card name={c.name} key={c.id} genre= {c.genres[0]?c.genres[0].name:'Unknown'} imageLink={c.background_image} id={c.id}/>;
+          return <Card
+            name={c.name}
+            key={c.id}
+            genre= {c.genres[0]?c.genres[0].name:'Unknown'}
+            imageLink={c.background_image}
+            id={c.id}
+            rating= {c.rating}
+            />;
         })
       ) : (
         <div>{message}</div>

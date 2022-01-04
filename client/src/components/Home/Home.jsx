@@ -13,7 +13,7 @@ export default function Home() {
         <aside>
           <Options />
         </aside>
-        <section>
+        <section className='cards'>
           <PaginationItems />
         </section>
       </div>

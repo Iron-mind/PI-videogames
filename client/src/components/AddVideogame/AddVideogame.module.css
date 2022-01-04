@@ -1,0 +1,24 @@
+h1{
+  background-color: rgb(83,226,233,0.8);
+  color: black;
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+.danger {
+  font-size: 0.8rem;
+  color: red;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+form div{
+   margin: 0.2rem 0rem 0.2rem 0rem;
+}
+
+
+.addGame{
+
+  border: 0.5rem solid black;
+  align-self: center;
+   border-radius: 1rem;
+   
+}

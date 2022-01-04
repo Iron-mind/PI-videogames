@@ -6,6 +6,8 @@ import {
    postGame
  } from '../../actions'
 
+const s = require('./AddVideogame.module.css')
+
 function validate(input) {
   let errors = {};
   if (!input.name) {
@@ -14,7 +16,7 @@ function validate(input) {
   if (!input.rating) {
     errors.rating = 'Rating is required';
 
-  } else if (Number(input.rating)>5|| Number(input.rating)< 1) {
+  } else if (Number(input.rating)>5|| Number(input.rating)< 1 || isNaN(Number(input.rating))) {
     errors.rating = 'Rating is invalid';
 
   }
@@ -98,6 +100,7 @@ export default function AddVideogame() {
      released: "",
      rating: "",
      description: '',
+     background_image:''
 
    });
    setgenres([])
@@ -128,15 +131,15 @@ export default function AddVideogame() {
     );
   }
  return (
-     <>
+     <div>
      <h1>Add VideoGame</h1>
      <form
 
-       className="form"
+       className={s.addGame}
 
        onSubmit={handleSubmit}
      >
-     <div className='card'>
+     <div >
 
        <div>
          <label>Name </label>
@@ -148,7 +151,7 @@ export default function AddVideogame() {
            value={input.name}
          />
        </div>
-       {errors.name && (<p> {errors.name} </p>)}
+       {errors.name && (<p className={s.danger}> {errors.name} </p>)}
 
        <div>
          <label>Released </label>
@@ -159,7 +162,7 @@ export default function AddVideogame() {
            name="released"
            value={input.released}
          />
-       {errors.released && (<p> {errors.released} </p>)}
+       {errors.released && (<p className={s.danger}> {errors.released} </p>)}
 
        </div>
 
@@ -174,7 +177,7 @@ export default function AddVideogame() {
              name="rating"
              value={input.rating}
            />
-         {errors.rating && (<p> {errors.rating} </p>)}
+         {errors.rating && (<p className={s.danger}> {errors.rating} </p>)}
 
        </div>
        <div>
@@ -188,8 +191,17 @@ export default function AddVideogame() {
            rows="6"
            cols="40">
          </textarea>
-         {errors.description && (<p> {errors.description} </p>)}
+         {errors.description && (<p className={s.danger}> {errors.description} </p>)}
 
+       </div>
+       <div>
+         <label>Background Image link</label>
+           <input
+             type="text"
+             onChange={handleInputChange}
+             name="background_image"
+             value={input.background_image}
+           />
        </div>
        <div>
          <label>Genres </label>
@@ -211,7 +223,7 @@ export default function AddVideogame() {
          {genres?.map((g,i)=>{
            return <span key={i}>{`"`}{g}{`" `}</span>
          })}
-         {errors.genres && (<p> {errors.genres} </p>)}
+         {errors.genres && (<p className={s.danger}> {errors.genres} </p>)}
 
 
        </div>
@@ -235,7 +247,7 @@ export default function AddVideogame() {
          {platforms?.map((p,i)=>{
            return <span key={i}>{`"`}{p}{`" `}</span>
          })}
-         {errors.platforms && (<p> {errors.platforms} </p>)}
+         {errors.platforms && (<p className={s.danger}> {errors.platforms} </p>)}
 
        </div>
        <button className='btn'
@@ -247,6 +259,6 @@ export default function AddVideogame() {
          </div>
 
      </form>
-     </>
+     </div>
  );
 }

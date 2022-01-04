@@ -137,7 +137,7 @@ let pagintationButtons = <ul className={s.pageNumbers}>
 
 </ul>
 
-  return (<div>
+  return (<div className={s.cards}>
       {pages.length>1?pagintationButtons:null}
      <Cards items={currentItems}/>
   </div >)

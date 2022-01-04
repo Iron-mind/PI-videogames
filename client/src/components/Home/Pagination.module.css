@@ -12,8 +12,43 @@
 
 .pageNumbers li.active {
   background-color: white;
+  color: #07072c
 }
 .btnPages:hover{
   background-color: white;
   border: 0.1rem solid black;
+  color: #07072c
+}
+
+
+.card .title {
+
+    max-height: 40px;
+    background-color: rgb(255,255,255,0.5);
+    color: black;
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+
+}
+.card .cardTop {
+
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0px;
+  max-height: 40px;
+
+}
+
+.rating{
+  background-color: #53e2e9;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+.genre{
+  background-color: rgb(255,255,255,0.5);
+  padding: 0.1rem;
+  font-size: 1rem
+}
+.cards .card:hover {
+    transform: translateY(-0.1rem)
 }

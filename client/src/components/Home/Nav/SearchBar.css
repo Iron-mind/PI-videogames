@@ -17,7 +17,7 @@
     display: inline-flex;
     justify-content: space-between;
     width: 320px;
-    background-color: #697f9cef;
+    background-color: #53e2e9;
     box-shadow: 0.1rem 0.1rem 0.1rem #e9eef3ef;
 
 
@@ -25,6 +25,10 @@
 .btn{
     color: white;
     font-size: 1.2rem;
-    background-color: #737a83ef;
+    background-color: #07072c;
     border-radius: 0.5rem;
+}
+
+.btn:hover{
+  box-shadow: 0.2rem 0.2rem 0.2rem #737a83ef;
 }

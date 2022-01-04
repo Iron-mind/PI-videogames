@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     },
     background_image:{
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     status:{
       type:DataTypes.ENUM('existing','added')
