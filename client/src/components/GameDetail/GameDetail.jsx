@@ -19,9 +19,11 @@ export default function GameDetail() {
   }
   React.useEffect(()=>{
     dispatch(getGameById(id))
-  },[])
+  },[dispatch,id])
 
-  return (<div className={s.gameDetail} style={style}>
+  return (<div>
+
+  {game.id===id?(<div className={s.gameDetail} style={style}>
   <h1 className={s.title}>{game.name}</h1>
   <div className={s.content}>
     {game.description_raw ? game.description_raw : game.description}
@@ -57,6 +59,9 @@ export default function GameDetail() {
   <Link to={"/addgame"} style={{ textDecoration: "none" }}>
     <button className='btn'>Create New Game</button>
   </Link>
+</div>):<div>
+  Loading...
+</div>}
 </div>
 )
 }

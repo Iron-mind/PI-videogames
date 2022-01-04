@@ -1,11 +1,11 @@
 import React, {useState,  useEffect } from "react";
-import {useSelector}  from 'react-redux'
+
 
 import Card from "./Card.jsx";
 
 export default function Cards({items}) {
   const [message , setmessage]= useState('Loading...')
-  const games = useSelector((state) => state.games);
+
 
  useEffect(()=>{
    setTimeout(()=>{

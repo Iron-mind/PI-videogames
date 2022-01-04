@@ -23,8 +23,8 @@ export default function Options() {
       setfilteringInput({
         genre:"none",
         type:"none",
-        rating: e.target.name=="rating"?e.target.value:"none",
-          alph:e.target.name=="alph"?e.target.value:"none",
+        rating: e.target.name==="rating"?e.target.value:"none",
+          alph:e.target.name==="alph"?e.target.value:"none",
       })
       let data ={
         order: e.target.name,
@@ -70,7 +70,7 @@ export default function Options() {
    function useFetchingWhenMount(actionCreator) {
       useEffect(()=>{
          dispatch(actionCreator())
-      }, [])
+      }, [actionCreator])
    }
    useFetchingWhenMount(getGenres)
 

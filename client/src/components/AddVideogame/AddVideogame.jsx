@@ -71,7 +71,7 @@ export default function AddVideogame() {
   function useFetchingWhenMount(actionCreator) {
      useEffect(()=>{
         dispatch(actionCreator())
-     }, [])
+     }, [actionCreator])
   }
   useFetchingWhenMount(getGenres)
   useFetchingWhenMount(getPlatforms)

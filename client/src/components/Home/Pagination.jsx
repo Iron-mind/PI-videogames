@@ -1,6 +1,6 @@
 import React, {useState,useEffect}from "react";
 import Cards from "./Cards.jsx";
-import {useSelector, useDispatch, connect}  from 'react-redux'
+import { connect}  from 'react-redux'
 import s from './Pagination.module.css'
 import {getGames}  from '../../actions/index.js'
 
@@ -56,7 +56,7 @@ function btnNext() {
      await getGames();
    }
    fetchData();
-   }, [])
+ }, [getGames])
 
 
 useEffect(()=>{
@@ -96,7 +96,7 @@ const renderPageNumbers = pages.map(number=>{
         className={s.pageNumber}
         key={number}
         id={number}
-        className={number== currentPage? s.active:null}
+        className={number=== currentPage? s.active:null}
         >
         {number}
       </li>
@@ -125,7 +125,7 @@ let pagintationButtons = <ul className={s.pageNumbers}>
   {renderPageNumbers}
 
   {pageIncrement}
-  {currentPage==pages.length ?null
+  {currentPage===pages.length ?null
     :
     <li
       onClick={btnNext}
