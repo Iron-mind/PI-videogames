@@ -5,6 +5,7 @@ const fetch = require("cross-fetch");
 //const episodesRouter = require("./episodes")
 const linkApi = " https://api.rawg.io/api/games";
 let router = Router();
+
 let genreIncluded = {
     model: Genre,
     attributes: ['name'],

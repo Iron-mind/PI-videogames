@@ -59,6 +59,9 @@ export default function GameDetail() {
   <Link to={"/home"} style={{ textDecoration: "none" }}>
     <button className='btn'>Go to Home</button>
   </Link>
+  <div>
+    {game.name_original?game.name_original:null}
+  </div>
 </div>):<h2>
   Loading...
 </h2>}
