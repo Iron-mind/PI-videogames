@@ -16,9 +16,9 @@
     "static/media/gamecontrol.91f1316d.png": "/PI-videogames/static/media/gamecontrol.91f1316d.png"
   },
   "entrypoints": [
-    "/PI-videogames/static/js/runtime-main.b00cec57.js",
-    "/PI-videogames/static/js/2.4bae3102.chunk.js",
-    "/PI-videogames/static/css/main.69b3679d.chunk.css",
-    "/PI-videogames/static/js/main.3011c055.chunk.js"
+    "/static/js/runtime-main.b00cec57.js",
+    "/static/js/2.4bae3102.chunk.js",
+    "/static/css/main.69b3679d.chunk.css",
+    "/static/js/main.3011c055.chunk.js"
   ]
 }
