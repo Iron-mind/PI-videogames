@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PI-videogames/static/css/main.69b3679d.chunk.css",
-    "main.js": "/PI-videogames/static/js/main.3011c055.chunk.js",
-    "main.js.map": "/PI-videogames/static/js/main.3011c055.chunk.js.map",
+    "main.js": "/PI-videogames/static/js/main.ffbc4f68.chunk.js",
+    "main.js.map": "/PI-videogames/static/js/main.ffbc4f68.chunk.js.map",
     "runtime-main.js": "/PI-videogames/static/js/runtime-main.b00cec57.js",
     "runtime-main.js.map": "/PI-videogames/static/js/runtime-main.b00cec57.js.map",
     "static/js/2.4bae3102.chunk.js": "/PI-videogames/static/js/2.4bae3102.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.b00cec57.js",
     "static/js/2.4bae3102.chunk.js",
     "static/css/main.69b3679d.chunk.css",
-    "static/js/main.3011c055.chunk.js"
+    "static/js/main.ffbc4f68.chunk.js"
   ]
 }
