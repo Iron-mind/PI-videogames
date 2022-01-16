@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/PI-videogames/static/css/main.69b3679d.chunk.css",
-    "main.js": "/PI-videogames/static/js/main.3011c055.chunk.js",
-    "main.js.map": "/PI-videogames/static/js/main.3011c055.chunk.js.map",
+    "main.js": "/PI-videogames/static/js/main.20ff4362.chunk.js",
+    "main.js.map": "/PI-videogames/static/js/main.20ff4362.chunk.js.map",
     "runtime-main.js": "/PI-videogames/static/js/runtime-main.b00cec57.js",
     "runtime-main.js.map": "/PI-videogames/static/js/runtime-main.b00cec57.js.map",
-    "static/js/2.4bae3102.chunk.js": "/PI-videogames/static/js/2.4bae3102.chunk.js",
-    "static/js/2.4bae3102.chunk.js.map": "/PI-videogames/static/js/2.4bae3102.chunk.js.map",
+    "static/js/2.597fbb16.chunk.js": "/PI-videogames/static/js/2.597fbb16.chunk.js",
+    "static/js/2.597fbb16.chunk.js.map": "/PI-videogames/static/js/2.597fbb16.chunk.js.map",
     "static/js/3.11df9451.chunk.js": "/PI-videogames/static/js/3.11df9451.chunk.js",
     "static/js/3.11df9451.chunk.js.map": "/PI-videogames/static/js/3.11df9451.chunk.js.map",
     "index.html": "/PI-videogames/index.html",
     "static/css/main.69b3679d.chunk.css.map": "/PI-videogames/static/css/main.69b3679d.chunk.css.map",
-    "static/js/2.4bae3102.chunk.js.LICENSE.txt": "/PI-videogames/static/js/2.4bae3102.chunk.js.LICENSE.txt",
+    "static/js/2.597fbb16.chunk.js.LICENSE.txt": "/PI-videogames/static/js/2.597fbb16.chunk.js.LICENSE.txt",
     "static/media/Landing.module.css": "/PI-videogames/static/media/bggames.69a7d2f1.jpg",
     "static/media/gamecontrol.91f1316d.png": "/PI-videogames/static/media/gamecontrol.91f1316d.png"
   },
   "entrypoints": [
-    "/static/js/runtime-main.b00cec57.js",
-    "/static/js/2.4bae3102.chunk.js",
-    "/static/css/main.69b3679d.chunk.css",
-    "/static/js/main.3011c055.chunk.js"
+    "static/js/runtime-main.b00cec57.js",
+    "static/js/2.597fbb16.chunk.js",
+    "static/css/main.69b3679d.chunk.css",
+    "static/js/main.20ff4362.chunk.js"
   ]
 }
