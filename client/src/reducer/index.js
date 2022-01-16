@@ -68,7 +68,7 @@ const initialState = {
       case GET_GENRES:
         return {
           ...state,
-          genres: [...action.payload]
+          genres: Array.from(new Set([...action.payload]))
         }
 
      case GET_GAME_DETAIL:
@@ -81,7 +81,7 @@ const initialState = {
       case GET_PLATFORMS:
       return {
         ...state,
-        platforms: action.payload
+        platforms: Array.from(new Set(action.payload))
        }
       case POST_GAME:
 

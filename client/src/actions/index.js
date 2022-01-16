@@ -7,7 +7,7 @@ export const SET_SEARCHINPUT = 'SET_SEARCHINPUT'
  export const GET_PLATFORMS = 'GET_PLATFORMS'
 export const POST_GAME = 'POST_GAME'
 
-var linkApi ='http://localhost:3001/'
+var linkApi ='https://api-vgames.herokuapp.com/'
 
 //get all games in order or not in order
 export function getGames(data={}) {
@@ -169,7 +169,7 @@ export function postGame(act) {
 
 
 
-    return postData("http://localhost:3001/videogame", act)
+    return postData(linkApi+'videogame', act)
       .then((json) => {
         dispatch({ type: POST_GAME, payload: json });
       })

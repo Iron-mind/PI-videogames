@@ -5,7 +5,7 @@ import {
    getGenres,
    postGame
  } from '../../actions'
-
+import {Link} from 'react-router-dom'
 const s = require('./AddVideogame.module.css')
 
 function validate(input) {
@@ -94,19 +94,22 @@ export default function AddVideogame() {
 
  function handleSubmit(e) {
    e.preventDefault();
+   if(Object.keys(errors).length==0){
+     setInput({
+       name: "",
+       released: "",
+       rating: "",
+       description: '',
+       background_image:''
 
-   setInput({
-     name: "",
-     released: "",
-     rating: "",
-     description: '',
-     background_image:''
+     });
+     setgenres([])
+     setplatforms([])
+     dispatch(postGame({status:'added', genres, platforms, ...input}))
+     alert(" Game added")
+   }
+   return 0
 
-   });
-   setgenres([])
-   setplatforms([])
-   dispatch(postGame({status:'added', genres, platforms, ...input}))
-   //alert(" Game added")
  }
   function addGenre(e) {
     setgenres(Array.from(new Set([...genres, e.target.value])))
@@ -133,6 +136,8 @@ export default function AddVideogame() {
  return (
      <div>
      <h1>Add VideoGame</h1>
+
+
      <form
 
        className={s.addGame}
@@ -259,6 +264,12 @@ export default function AddVideogame() {
          </div>
 
      </form>
+     <Link to='/home'>
+       <button className='btn'
+         >
+           Go to home
+         </button>
+     </Link>
      </div>
  );
 }
