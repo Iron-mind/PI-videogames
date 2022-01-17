@@ -15,7 +15,7 @@ App utlizando React, Redux, Node y Sequelize.
 - [ ] Sequelize - Postgres
 
 
-## Comenzando
+## ¿Quieres Implementarlo?
 
  
 __IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
@@ -59,7 +59,10 @@ El contenido de `client` fue creado usando: Create React App.
 
 en https://iron-mind.github.io/PI-videogames puedes ver:
 
-__Pagina inicial__ __Ruta principal__ __Ruta de detalle de videojuego__ __Ruta de creación de videojuegos__
+- __Pagina inicial__
+- __Ruta principal__ 
+- __Ruta de detalle de videojuego__
+- __Ruta de creación de videojuegos__
 
 #### Base de datos
 
