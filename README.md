@@ -3,7 +3,7 @@
 CLic --> https://iron-mind.github.io/PI-videogames
 
 
-[![Deployed Project](screenshotp.png "see the project")](https://iron-mind.github.io/PI-Countries/)
+[![Deployed Project](screenshotp.png "see the project")](https://iron-mind.github.io/PI-videogames/)
 
 <p align="right">
   <img height="200" src="./videogame.png" />
