@@ -1,9 +1,11 @@
 
-# Individual Project - Web Videogames
-CLic --> https://iron-mind.github.io/PI-videogames
+# Individual Project - Web Videogames.
 
-
-[![Deployed Project](screenshotp.png "see the project")](https://iron-mind.github.io/PI-videogames/)
+                
+See the video   
+click
+:point_down:
+[![Deployed Project](screenshotp.png "see the project")](https://www.youtube.com/watch?v=XreX2wRbOEM)
 
 <p align="right">
   <img height="200" src="./videogame.png" />
